@@ -28,25 +28,61 @@ del car2 #Output: "The car company is deleted !"
 
 
 
-class ArithmaticOperations:
-    def __init__(self, num1, num2):
-        self.num1 = num1
-        self.num2 = num2
+#Method overloading
+class Calculator:
+    def add(self, x=None, y=None):
+        if x is None and y is None:
+            print("Please provide numbers to add.")
+        elif x is None:
+            return y
+        elif y is None:
+            return x
+        else:
+            return x + y
 
-    def addition(self):
-        return self.num1 + self.num2
+calc = Calculator()
+print(calc.add(5))  # Output: 5 (using default y=None)
+print(calc.add(3, 4))  # Output: 7
+
+
+
+
+
+#Data Encapsulation
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+        self.__area = None  
+
+    def calculate_area(self):
+        self.__area = 3.14159 * self.radius**2  
+
+    def get_area(self):
+        if self.__area is None:
+            self.calculate_area()  
+        return self.__area
     
-    def subtraction(self):
-        return self.num1 - self.num2
-    
-    def multiplication(self):
-        return self.num1 * self.num2
-    
-    def division(self):
-        return self.num1 // self.num2
-    
-operations = ArithmaticOperations(12, 6)
-print(operations.addition()) #Output: 18
-print(operations.subtraction()) #Output: 6
-print(operations.multiplication()) #Output: 72
-print(operations.division()) #Output: 2
+circle1 = Circle(3)
+circle1.calculate_area 
+print(circle1.get_area()) #Output: 28.27431
+
+
+
+
+#Data Abstraction
+class Shape:
+    def __init__(self):
+        pass
+
+    def calculate_area(self):
+        raise NotImplementedError("Subclasses must implement calculate_area()")
+
+class Square:
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def calculate_area(self):
+        return self.side_length * self.side_length
+
+sq1 = Square(4)
+print(sq1.calculate_area()) #Ouput: 16
