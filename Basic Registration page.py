@@ -57,7 +57,7 @@ file.add_command(label="Save as...")
 file.add_separator()
 
 file.add_command(label="Exit", command=reg_pg.quit)
-menu.add_cascade(label="file", menu=file)
+menu.add_cascade(label="File", menu=file)
 
 edit = Menu(reg_pg, tearoff=0)
 edit.add_command(label="Cut")  
@@ -65,7 +65,7 @@ edit.add_command(label="Copy")
 edit.add_command(label="Paste")  
 edit.add_command(label="Delete")  
 edit.add_command(label="Select All")
-menu.add_cascade(label="edit", menu=edit)
+menu.add_cascade(label="Edit", menu=edit)
 
 help = Menu(reg_pg, tearoff=0)
 help.add_command(label="About")
@@ -73,7 +73,7 @@ help.add_command(label="About")
 help.add_separator()
 
 help.add_command(label="Help")
-menu.add_cascade(label="help", menu=help)
+menu.add_cascade(label="Help", menu=help)
 
 reg_pg.config(menu=menu)
 
