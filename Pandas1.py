@@ -77,3 +77,28 @@ foot = {"Footballer_ID": ["F-101", "F-102", "F-103", "F-104", "F-105", "F-106", 
 
 d3 = pd.DataFrame(foot, index=[1, 2, 3, 4, 5, 6, 7])
 print(d3)
+
+# Data Inspection
+d3.info()
+d3.head(4)
+d3.describe()
+d3.isnull().sum()
+d3.columns
+d3.dtypes
+
+# Data Exxploration
+
+# .value_count()
+age_count = d3["Age"].value_counts()
+print("Age Counts : ")
+print(age_count)
+
+# .unique()
+unique_club = d3["Club"].unique()
+print("Unique Club : ")
+print(unique_club)
+
+# corr()
+correlation_matrix = d3.corr()
+print("Correlation Matrix : ")
+print(correlation_matrix)
